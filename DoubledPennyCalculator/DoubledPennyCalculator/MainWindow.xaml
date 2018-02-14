@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <TextBox 
+            Height="23" 
+            HorizontalAlignment="Left" 
+            Margin="271,94,0,0" 
+            Name="tbNumDays" 
+            VerticalAlignment="Top" 
+            Width="120" />
+        <Button 
+            Content="Generate DXF" 
+            Height="23" 
+            HorizontalAlignment="Left" 
+            Margin="286,194,0,0" 
+            Name="btnCalculate" 
+            VerticalAlignment="Top" 
+            Width="84" 
     </Grid>
 </Window>
