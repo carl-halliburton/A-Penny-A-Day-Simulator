@@ -31,8 +31,9 @@ namespace DoubledPennyCalculator
 
         public void BtnCalculateOnclick(object sender, EventArgs e)
         {
-            ClearClassFields();
-            calculate.SetNumDays(Convert.ToInt64(tbNumDays.Text));
+            ResetClassFields();
+            int temp = int.Parse(tbNumDays.Text);
+            calculate.SetNumDays(temp);
             calculate.DoublePenny();
             tbNumDays.Text = String.Empty;
             PrintData();
@@ -49,13 +50,10 @@ namespace DoubledPennyCalculator
             tbDisplayArea.AppendText(Environment.NewLine);
         }
 
-        public void ClearClassFields()
+        public void ResetClassFields()
         {
             calculate.SetNumDays(0);
-            calculate.SetPennyTotal(0);
+            calculate.SetPennyTotal(1);
         }
     }
- /*
- * get numDays
- */
 }

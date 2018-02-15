@@ -9,7 +9,7 @@ namespace DoubledPennyCalculator
     class Calculate
     {
         private string dollarValue;
-        private long numDays;
+        private int numDays;
         private long pennyTotal;
 
         public Calculate() {
@@ -43,12 +43,12 @@ namespace DoubledPennyCalculator
             return dollarValue;
         }
 
-        public void SetNumDays(long days)
+        public void SetNumDays(int days)
         {
             numDays = days;
         }
 
-        public long GetNumDays()
+        public int GetNumDays()
         {
             return numDays;
         }
