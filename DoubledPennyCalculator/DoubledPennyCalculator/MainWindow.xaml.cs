@@ -28,9 +28,18 @@ namespace DoubledPennyCalculator
             CalculateList = new List<Calculate>();
         }
 
-        public void BtnCalculateOnjclick()
+        public void BtnCalculateOnclick(object sender, EventArgs e)
         {
             CalculateList.Add(new Calculate(Convert.ToInt64(tbNumDays.Text)));
+            CalculateList[0].DoublePenny(CalculateList[0].GetNumDays());
+            CalculateList[0].FormeatDollar();
+            tbDisplayArea.Text = CalculateList[0].GetNumDays().ToString() + " Days";
+            tbDisplayArea.AppendText(Environment.NewLine);
+            tbDisplayArea.AppendText(CalculateList[0].GetPennyTotal().ToString() + " Cents/Pennys");
+            tbDisplayArea.AppendText(Environment.NewLine);
+            tbDisplayArea.AppendText("$" + CalculateList[0].GetDollarValue().ToString());
+
+            tbNumDays.Text = String.Empty;
         }
     }
 }

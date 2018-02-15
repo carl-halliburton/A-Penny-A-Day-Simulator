@@ -12,7 +12,7 @@
             HorizontalAlignment="Stretch"
             Margin="10,10,10,10"
             VerticalAlignment="Top"
-            Background="Gray"
+            Background="white"
             Padding="5"
             FontSize="12" />
         <TextBox 
@@ -30,7 +30,7 @@
             Name="btnCalculate" 
             VerticalAlignment="Top" 
             Width="84"
-            Click="btnCalculateOnjclick" />
+            Click="BtnCalculateOnclick" />
         <TextBox 
             Height="200" 
             Width="250"
