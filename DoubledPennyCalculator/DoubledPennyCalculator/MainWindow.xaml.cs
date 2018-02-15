@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections;
 
 namespace DoubledPennyCalculator
 {
@@ -20,14 +21,16 @@ namespace DoubledPennyCalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Calculate> CalculateList;
         public MainWindow()
         {
             InitializeComponent();
+            CalculateList = new List<Calculate>();
         }
 
-        public void btnCalculateOnjclick()
+        public void BtnCalculateOnjclick()
         {
-
+            CalculateList.Add(new Calculate(Convert.ToInt64(tbNumDays.Text)));
         }
     }
 }
