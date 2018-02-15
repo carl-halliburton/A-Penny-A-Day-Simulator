@@ -24,5 +24,10 @@ namespace DoubledPennyCalculator
         {
             InitializeComponent();
         }
+
+        public void btnCalculateOnjclick()
+        {
+
+        }
     }
 }

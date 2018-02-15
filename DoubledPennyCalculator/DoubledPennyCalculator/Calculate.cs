@@ -8,22 +8,25 @@ namespace DoubledPennyCalculator
 {
     class Calculate
     {
-        private string input;
-        private string output;
-        private int count;
+        private string dollarValue;
         private long numDays;
         private long pennyTotal;
-        private double dollarValue;
 
         public Calculate(long days) {
-            count = 0;
             numDays = days;
             pennyTotal = 0;
+            DoublePenny(numDays);
         }
 
-        public void DoublePenny()
+        public void DoublePenny(long numbDays)
         {
-            SetPennyTotal(GetPennyTotal() * GetPennyTotal());
+            int count = 0;
+            while (count != numDays)
+            {
+                SetPennyTotal(GetPennyTotal() * GetPennyTotal());
+                count++;
+            }
+            FormeatDollar();
         }
 
         public void SetPennyTotal(long newTotal)
@@ -36,29 +39,14 @@ namespace DoubledPennyCalculator
             return pennyTotal;
         }
 
-        public void SetOutPut()
+        public String GetDollarValue()
         {
-            
-        }
-
-        public String GetOutPut()
-        {
-            return output;
-        }
-
-        public void SetCount()
-        {
-
-        }
-
-        public int GetCount()
-        {
-            return count;
+            return dollarValue;
         }
 
         public void FormeatDollar()
-        {
-            output = Convert.ToDecimal(dollarValue).ToString("#,##0.00");
+        { 
+            dollarValue = Convert.ToDecimal(pennyTotal / 100.0).ToString("#,##0.00");
         }
     }
 }

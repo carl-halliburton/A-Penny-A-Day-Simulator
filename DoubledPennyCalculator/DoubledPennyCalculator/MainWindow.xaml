@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Label
+            Content="Enter the number of days; to calculate how many pennys you would have."
+            HorizontalAlignment="Stretch"
+            Margin="10,10,10,10"
+            VerticalAlignment="Top"
+            Background="Gray"
+            Padding="5"
+            FontSize="12" />
         <TextBox 
             Height="23" 
             HorizontalAlignment="Left" 
@@ -21,7 +29,8 @@
             Margin="10,70,0,0" 
             Name="btnCalculate" 
             VerticalAlignment="Top" 
-            Width="84" />
+            Width="84"
+            Click="btnCalculateOnjclick" />
         <TextBox 
             Height="200" 
             Width="250"
