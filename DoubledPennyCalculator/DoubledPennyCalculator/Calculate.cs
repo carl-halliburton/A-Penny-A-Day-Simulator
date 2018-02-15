@@ -12,17 +12,17 @@ namespace DoubledPennyCalculator
         private long numDays;
         private long pennyTotal;
 
-        public Calculate(long days) {
-            numDays = days;
-            pennyTotal = 0;
+        public Calculate() {
+            numDays = 0;
+            pennyTotal = 1;
         }
 
-        public void DoublePenny(long numbDays)
+        public void DoublePenny()
         {
             int count = 0;
             while (count != numDays)
             {
-                SetPennyTotal(GetPennyTotal() * GetPennyTotal());
+                pennyTotal = pennyTotal + pennyTotal;
                 count++;
             }
             FormeatDollar();
@@ -41,6 +41,11 @@ namespace DoubledPennyCalculator
         public String GetDollarValue()
         {
             return dollarValue;
+        }
+
+        public void SetNumDays(long days)
+        {
+            numDays = days;
         }
 
         public long GetNumDays()

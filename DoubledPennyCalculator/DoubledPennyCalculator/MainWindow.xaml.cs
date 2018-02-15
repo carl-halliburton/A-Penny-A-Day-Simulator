@@ -21,25 +21,41 @@ namespace DoubledPennyCalculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Calculate> CalculateList;
+        private Calculate calculate;
+
         public MainWindow()
         {
             InitializeComponent();
-            CalculateList = new List<Calculate>();
+            calculate = new Calculate();
         }
 
         public void BtnCalculateOnclick(object sender, EventArgs e)
         {
-            CalculateList.Add(new Calculate(Convert.ToInt64(tbNumDays.Text)));
-            CalculateList[0].DoublePenny(CalculateList[0].GetNumDays());
-            CalculateList[0].FormeatDollar();
-            tbDisplayArea.Text = CalculateList[0].GetNumDays().ToString() + " Days";
-            tbDisplayArea.AppendText(Environment.NewLine);
-            tbDisplayArea.AppendText(CalculateList[0].GetPennyTotal().ToString() + " Cents/Pennys");
-            tbDisplayArea.AppendText(Environment.NewLine);
-            tbDisplayArea.AppendText("$" + CalculateList[0].GetDollarValue().ToString());
-
+            ClearClassFields();
+            calculate.SetNumDays(Convert.ToInt64(tbNumDays.Text));
+            calculate.DoublePenny();
             tbNumDays.Text = String.Empty;
+            PrintData();
+        }
+
+        public void PrintData()
+        {
+            tbDisplayArea.Text= (calculate.GetNumDays() + " Days");
+            tbDisplayArea.AppendText(Environment.NewLine);
+            tbDisplayArea.AppendText(calculate.GetPennyTotal() + " Cents/Pennys");
+            tbDisplayArea.AppendText(Environment.NewLine);
+            tbDisplayArea.AppendText("$" + calculate.GetDollarValue());
+            tbDisplayArea.AppendText(Environment.NewLine);
+            tbDisplayArea.AppendText(Environment.NewLine);
+        }
+
+        public void ClearClassFields()
+        {
+            calculate.SetNumDays(0);
+            calculate.SetPennyTotal(0);
         }
     }
+ /*
+ * get numDays
+ */
 }
