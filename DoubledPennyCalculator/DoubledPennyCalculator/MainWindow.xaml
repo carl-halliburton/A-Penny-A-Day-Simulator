@@ -10,17 +10,26 @@
         <TextBox 
             Height="23" 
             HorizontalAlignment="Left" 
-            Margin="271,94,0,0" 
-            Name="tbNumDays" 
+            Margin="10,40,0,0" 
+            Name="tbNumDays"
             VerticalAlignment="Top" 
             Width="120" />
         <Button 
-            Content="Generate DXF" 
+            Content="Calculate" 
             Height="23" 
             HorizontalAlignment="Left" 
-            Margin="286,194,0,0" 
+            Margin="10,70,0,0" 
             Name="btnCalculate" 
             VerticalAlignment="Top" 
-            Width="84" 
+            Width="84" />
+        <TextBox 
+            Height="200" 
+            Width="250"
+            AcceptsReturn="True" 
+            HorizontalAlignment="Left" 
+            Margin="10,100,0,0" 
+            Name="tbDisplayArea"
+            VerticalAlignment="Top" 
+            IsReadOnly = "True" />
     </Grid>
 </Window>
