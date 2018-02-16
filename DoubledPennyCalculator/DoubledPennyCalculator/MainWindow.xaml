@@ -21,7 +21,8 @@
             Margin="10,40,0,0" 
             Name="tbNumDays"
             VerticalAlignment="Top" 
-            Width="120" />
+            Width="120" 
+            PreviewTextInput="NumberValidationTextBox"/>
         <Button 
             Content="Calculate" 
             Height="23" 

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace DoubledPennyCalculator
 {
@@ -27,6 +28,13 @@ namespace DoubledPennyCalculator
         {
             InitializeComponent();
             calculate = new Calculate();
+            tbDisplayArea.Text = ("Results");
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         public void BtnCalculateOnclick(object sender, EventArgs e)
@@ -41,7 +49,7 @@ namespace DoubledPennyCalculator
 
         public void PrintData()
         {
-            tbDisplayArea.Text= (calculate.GetNumDays() + " Days");
+            tbDisplayArea.AppendText(calculate.GetNumDays() + " Days");
             tbDisplayArea.AppendText(Environment.NewLine);
             tbDisplayArea.AppendText(calculate.GetPennyTotal() + " Cents/Pennys");
             tbDisplayArea.AppendText(Environment.NewLine);
