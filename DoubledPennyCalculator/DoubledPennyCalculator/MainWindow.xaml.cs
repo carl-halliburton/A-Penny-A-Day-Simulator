@@ -29,6 +29,12 @@ namespace DoubledPennyCalculator
             InitializeComponent();
             calculate = new Calculate();
             tbDisplayArea.Text = ("Results");
+            tbNumDays.CommandBindings.Add(new CommandBinding(ApplicationCommands.Paste, Foo));
+        }
+
+        private void Foo(object sender, ExecutedRoutedEventArgs e)
+        {
+            e.Handled = true;
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
